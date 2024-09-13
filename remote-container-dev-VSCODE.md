@@ -35,7 +35,7 @@ Ultimately, the choice depends on your project's specific needs and your team's 
 Do you have a preference or specific requirements for your project that might influence this decision?
 
 Hélio, 11:12
-And  if my container are always running in my local machine.
+And if my containers are always running on my local machine.
 
 Copilot, 11:12
 If your containers are always running on your local machine, using Docker volumes to share source files with the host machine is generally the better practice. Here’s why:
@@ -66,7 +66,7 @@ This configuration mounts your current directory (.) to the /app directory insid
 Would you like more details on setting this up or any other aspect of your development environment?
 
 Hélio, 11:20
-As an expert in docker,  when we instantiate a container with volumes defined in the docker run command using several volumes definitions, after stoping the container, Are we capable to start this container again with different volume definitions?
+As an expert in docker,  when we instantiate a container with volumes defined in the docker run command using several volume definitions, after stopping the container, can we start this container again with different volume definitions?
 
 Copilot, 11:20
 Yes, you can start a stopped container with different volume definitions, but there are a few things to keep in mind:
