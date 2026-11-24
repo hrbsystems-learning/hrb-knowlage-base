@@ -1,0 +1,50 @@
+
+How to do the same for Claude Code CLI?
+
+Yes, Google provides an official Android CLI plugin for Claude Code CLI, and you can load all Android Skills directly into Claude Code's skill directories.
+
+1. Install the Official Android CLI Plugin
+
+Google distributes a dedicated Claude Code marketplace plugin in the android-cli-plugin repository that adds the core android-cli skill.
+• From your regular terminal:bash
+claude plugin marketplace add android/android-cli-plugin
+claude plugin install android-cli@android-cli-plugin
+Use code with caution.
+• Or inside an active claude session:text
+/plugin marketplace add android/android-cli-plugin
+/plugin install android-cli@android-cli-plugin
+Use code with caution.
+
+2. Add All Android Skills to Claude Code
+
+According to the Claude Code Skills documentation and android skills add docs, you can install the specialized skills (such as Jetpack Compose, Navigation 3, or R8 rules) either via the CLI's --agent flag or by symlinking your existing folder:
+• Option A: Install directly via android skills add (Recommended).
+Specify claude with the --agent flag so Android CLI places the files in Claude Code's directory:bash
+android skills add --all --agent=claude
+Use code with caution.
+• Option B: Symlink your existing skills folder (Zero duplication).
+If you already downloaded all skills into ~/.gemini/antigravity/skills for agy and Junie, Claude Code natively resolves symlinked folders inside ~/.claude/skills/:bash
+mkdir -p ~/.claude/skills
+ln -s ~/.gemini/antigravity/skills/* ~/.claude/skills/
+Use code with caution.
+(Note: Avoid loading all 30+ skills globally if you want to save context window tokens—you can symlink only the specific skills you need into <projectRoot>/.claude/skills/ instead.)
+
+3. Verify Inside Claude Code
+
+Launch Claude in your Android project and run /skills to confirm android-cli and your imported Android skills appear in the active list.
+Since you're using Antigravity (agy), Junie CLI, and Claude Code on the same machine, would you like a single shell script or unified folder layout that keeps android skills update --all synced across all three agents automatically?
++3
+• 
+Medium·AndroidLab by Andre
+How to Use Claude Code (or Coding AI Agents) to Develop an ...
+November 2, 2026 — These are SKILL.md files … there are now over 30 skills across more than 20 areas. These range from Play policy audits, intent sec...
+• 
+YouTube·Android Developers
+Agentic engineering with Claude Code and Android CLI
+October 29, 2026 — Android CLI can search the available skills and install the ones that make sense for your app … every agent harness has some form ...
+30:23
+• 
+Android Developers
+Agent plugins | Android Studio | Android Developers
+October 28, 2026 — Android CLI plugin: official plugin for Antigravity, Claude Code, and OpenAI's Codex adding the `android-cli` skill to create proj...
+Show all
